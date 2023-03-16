@@ -12,9 +12,11 @@ import Nav from "./components/Nav";
 import Dashboard from "./pages/Dashboard";
 import Raports from "./pages/Reports";
 import Messages from "./pages/Messages";
-import Members from './pages/Members'
-import Settings from './pages/Settings'
-import EditUser from "./user crud/EditUser/EditUser";
+import Members from "./pages/Members";
+import Settings from "./pages/Settings";
+import EditUser from "./user/EditUser/EditUser";
+import AddUser from "./user/AddUser/AddUser.jsx";
+import ViewUser from "./user/ViewUser/ViewUser.jsx";
 
 function App() {
   return (
@@ -27,9 +29,11 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/raports" element={<Raports />} />
           <Route path="/messages" element={<Messages />} />
-          <Route path="/members" index element={<Members />}/>
+          <Route path="/members" index element={<Members />} />
           <Route path="/settings" element={<Settings />} />
-          <Route path="/users/view/:userId"  element={<EditUser />} />
+          <Route path="/users/edit/:userId" element={<EditUser />} />
+          <Route path="/user/create" element={<AddUser />} />
+          <Route path="/user/view/:userId" element={<ViewUser />} />
         </Routes>
       </Nav>
     </BrowserRouter>

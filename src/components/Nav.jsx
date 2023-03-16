@@ -45,7 +45,7 @@ const Nav = ({children}) => {
     <div className="container">
     <div style={{width: isOpen ? "200px" : "50px"}} className="sidebar">
         <div className="top_section">
-            <img src={require('../assets/logo_blue_white.png')} style={{display: isOpen ? "block" : "none"}} className="logo"/>
+            <img alt='logo' src={require('../assets/logo_blue_white.png')} style={{display: isOpen ? "block" : "none"}} className="logo"/>
             <div style={{marginLeft: isOpen ? "50px" : "0px"}} className="bars">
                 <FaBars onClick={toggle}/>
             </div>

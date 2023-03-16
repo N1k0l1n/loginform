@@ -23,13 +23,13 @@ const Dashboard = () => {
       </ul>
     </nav>
 
-    <div className="menu">
+    <div className="menuss">
       <div className="line"></div>
     </div>
 
     <main>
       <div className="main__col--1">
-        <h2>Overview</h2>
+        <p className="h3 fw-bold">Overview</p>
       </div>
 
       <div className="main__col--2">
