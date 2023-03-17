@@ -1,25 +1,30 @@
-import axios from "axios"
+import axios from "axios";
 
-export class UserService{
-    static serverURL = `https://localhost:7030/api/User`;
+export class UserService {
+  static serverURL = `https://localhost:7030/api/User`;
 
-    static getAllUsers(){
-        let dataURL =`${this.serverURL}/users`;
-        return axios.get(dataURL);
-    }
+  static getAllUsers() {
+    let dataURL = `${this.serverURL}/users`;
+    return axios.get(dataURL);
+  }
 
-    static getUser(userId){
-        let dataURL = `${this.serverURL}/${userId}`;
-        return axios.get(dataURL);
-    }
+  static getUser(userId) {
+    let dataURL = `${this.serverURL}/${userId}`;
+    return axios.get(dataURL);
+  }
 
-    static createUser(user){
-        let dataURL =`${this.serverURL}/create`;
-        return axios.post(dataURL, user);
-    }
+  static createUser(user) {
+    let dataURL = `${this.serverURL}/create`;
+    return axios.post(dataURL, user);
+  }
 
-    static updateUser(user, userId){
-        let dataURL = `${this.serverURL}`;
-        return axios.put(dataURL, user);
-    }
+  static updateUser(user, userId) {
+    let dataURL = `${this.serverURL}`;
+    return axios.put(dataURL, user);
+  }
+
+  static deleteUser(userId) {
+    let dataURL = `${this.serverURL}/${userId}`;
+    return axios.delete(dataURL);
+  }
 }

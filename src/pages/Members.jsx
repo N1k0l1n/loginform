@@ -23,10 +23,32 @@ const Members = () => {
       setState({
         ...state,
         loading: false,
-        errorMessage: error.message
+        errorMessage: error.message,
       });
     }
   }, []);
+
+  //Delete Method
+  let clickDelete = async (userId) => {
+    try {
+      let response = await UserService.deleteUser(userId);
+      if (response) {
+        setState({ ...state, loading: true });
+        let response = await UserService.getAllUsers();
+        setState({
+          ...state,
+          loading: false,
+          users: response.data,
+        });
+      }
+    } catch (error) {
+      setState({
+        ...state,
+        loading: false,
+        errorMessage: error.message,
+      });
+    }
+  };
 
   let { loading, users, errorMessage } = state;
 
@@ -135,7 +157,10 @@ const Members = () => {
                                 >
                                   <i className="fa fa-pen" />
                                 </Link>
-                                <button className="btn btn-danger my-1">
+                                <button
+                                  className="btn btn-danger my-1"
+                                  onClick={() => clickDelete(user.id)}
+                                >
                                   <i className="fa fa-trash" />
                                 </button>
                               </div>

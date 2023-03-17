@@ -75,7 +75,6 @@ const EditUser = () => {
         <Spinner />
       ) : (
         <>
-        <pre>{JSON.stringify(user)}</pre>
           <div className="add-user p-3">
             <div className="square">
               <div className="row">
@@ -196,6 +195,9 @@ const EditUser = () => {
                       </Link>
                     </div>
                   </form>
+                </div>
+                <div className="col-md-6">
+                  <img src={user.photo} alt="photo" className="user-img" />
                 </div>
               </div>
             </div>
