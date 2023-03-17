@@ -49,9 +49,9 @@ const ViewUser = () => {
         </div>
       </div>
 
-      {loading ? 
+      {loading ? (
         <Spinner />
-       : 
+      ) : (
         <>
           {/* //Card */}
           <div className="view-user mt-3">
@@ -93,7 +93,7 @@ const ViewUser = () => {
             </div>
           </div>
         </>
-      }
+      )}
     </>
   );
 };

@@ -17,4 +17,9 @@ export class UserService{
         let dataURL =`${this.serverURL}/create`;
         return axios.post(dataURL, user);
     }
+
+    static updateUser(user, userId){
+        let dataURL = `${this.serverURL}`;
+        return axios.put(dataURL, user);
+    }
 }
