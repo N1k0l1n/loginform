@@ -4,9 +4,15 @@ import Spinner from "../components/Spinner";
 import { UserService } from "../services/UserService";
 
 const Members = () => {
+
+  let [query, setQuery] = useState({
+    text: ''
+  });
+
   let [state, setState] = useState({
     loading: false,
     users: [],
+    filteredUsers: [],
     errorMessage: "",
   });
 
@@ -18,6 +24,7 @@ const Members = () => {
         ...state,
         loading: false,
         users: response.data,
+        filteredUsers: response.data
       });
     } catch (error) {
       setState({
@@ -39,6 +46,7 @@ const Members = () => {
           ...state,
           loading: false,
           users: response.data,
+          filteredUsers: response.data
         });
       }
     } catch (error) {
@@ -50,7 +58,19 @@ const Members = () => {
     }
   };
 
-  let { loading, users, errorMessage } = state;
+  //Search users
+  let searchUsers = (event) => {
+    setQuery({ ...query, text: event.target.value});
+    let theUsers = state.users.filter(user => {
+      return user.name.toLowerCase().includes(event.target.value.toLowerCase())
+    });
+    setState({
+      ...state,
+      filteredUsers: theUsers
+    });
+  };
+
+  let { loading, users,filteredUsers, errorMessage } = state;
 
   return (
     <>
@@ -81,6 +101,9 @@ const Members = () => {
                   <div className="col">
                     <div className="mb-2">
                       <input
+                        name="text"
+                        value={query.text}
+                        onChange={searchUsers}
                         type="text"
                         className="form-control"
                         placeholder="Search Names"
@@ -110,8 +133,8 @@ const Members = () => {
           <div className="user-list">
             <div className="square">
               <div className="row">
-                {users.length > 0 &&
-                  users.map((user) => {
+                {filteredUsers.length > 0 &&
+                  filteredUsers.map((user) => {
                     return (
                       <div className="col-md-6" key={user.id}>
                         <div className="card my-2">
