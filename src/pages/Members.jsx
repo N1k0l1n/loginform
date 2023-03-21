@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Spinner from "../components/Spinner";
 import { UserService } from "../services/UserService";
+import Swal from "sweetalert2"
 
 const Members = () => {
 
@@ -38,6 +39,7 @@ const Members = () => {
   //Delete Method
   let clickDelete = async (userId) => {
     try {
+      Swal.fire("User Deleted!");
       let response = await UserService.deleteUser(userId);
       if (response) {
         setState({ ...state, loading: true });

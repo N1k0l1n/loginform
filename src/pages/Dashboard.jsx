@@ -1,155 +1,66 @@
-import React from 'react'
-import "../pages/Dashboard.css"
+import React from "react";
+import LineChat from "../components/LineChat";
+import PieChart from "../components/PieChart";
+import "../pages/Dashboard.scss";
 
 const Dashboard = () => {
   return (
-    <>
-    <div className="inner">
-    <nav id="nav">
-      <div className="nav__container--logo">
-        <div className="logo">W</div>
-        <h1>WasteBank</h1>
+    
+    <div className="p-3 ">
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-12 col-sm-6 col-md-4 col-lg-3 p-3 " >
+          <div className="d-flex justify-content-around py-4 bg-light align-items-center border border-secondary shadow-sm">
+          <i className="bi bi-graph-up-arrow fs-1 text-danger"></i>
+          <div>
+            <p>Increase</p>
+            <span>23%</span>
+          </div>
+          </div>
+        </div>
+        <div className="col-12 col-sm-6 col-md-4 col-lg-3 p-3 " >
+          <div className="d-flex justify-content-around py-4 bg-light align-items-center border border-secondary shadow-sm">
+          <i className="bi bi-currency-dollar fs-1 text-success"></i>
+          <div>
+            <p>Sales</p>
+            <span>234</span>
+          </div>
+          </div>
+        </div>
+        <div className="col-12 col-sm-6 col-md-4 col-lg-3 p-3 " >
+          <div className="d-flex justify-content-around py-4 bg-light align-items-center border border-secondary shadow-sm">
+          <i className="bi bi-truck fs-1 text-success"></i>
+          <div>
+            <p>Delivery</p>
+            <span>234</span>
+          </div>
+          </div>
+        </div>
+        <div className=" col-sm-6 col-md-4 col-lg-3 p-3 " >
+          <div className="d-flex justify-content-around bg-light py-4 align-items-center border border-secondary shadow-sm">
+          <i className="bi bi-currency-dollar fs-1 text-warning"></i>
+          <div>
+            <p>Loses</p>
+            <span>234</span>
+          </div>
+          </div>
+        </div>
       </div>
 
-      <ul className="nav-links">
-        <li>Dashboard</li>
-        <li>Customer</li>
-        <li>Category</li>
-        <li>Transaction</li>
-        <li>Pick-up</li>
-        <li>Stock</li>
-        <li>Financial</li>
-        <li>Raport</li>
-      </ul>
-    </nav>
+      <div className="row">
+          <div className="col-12 col-md-8 p-3">
+            <LineChat/>
+          </div>
+          <div className="col-12 col-md-4 p-3">
+            <PieChart/>
+          </div>
+      </div>
 
-    <div className="menuss">
-      <div className="line"></div>
+
     </div>
+    </div>
+    
+  );
+};
 
-    <main>
-      <div className="main__col--1">
-        <p className="h3 fw-bold">Overview</p>
-      </div>
-
-      <div className="main__col--2">
-        <div className="box box--1">
-          <div className="box--logo">
-            <span
-              className="iconify"
-              data-inline="false"
-              data-icon="fluent:people-32-filled"
-            ></span>
-          </div>
-          <div className="box--content">
-            <p className="box--title">Customer</p>
-            <p className="box--number">1,300</p>
-          </div>
-        </div>
-
-        <div className="box box--2">
-          <div className="box--logo">
-            <span
-              className="iconify"
-              data-inline="false"
-              data-icon="clarity:group-line"
-            ></span>
-          </div>
-          <div className="box--content">
-            <p className="box--title">Employees</p>
-            <p className="box--number">42</p>
-          </div>
-        </div>
-
-        <div className="box box--3">
-          <div className="box--logo">
-            <span
-              className="iconify"
-              data-inline="false"
-              data-icon="ant-design:cloud-download-outlined"
-            ></span>
-          </div>
-          <div className="box--content">
-            <p className="box--title">Request</p>
-            <p className="box--number">128</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="main__col--3">
-        <div className="graphic--container">
-          <h3>Customer based region</h3>
-          <img src="https://i.ibb.co/gd1vQTz/img.png" alt="illustration" />
-        </div>
-        <div className="recap--number">
-          <h5>Total category waste</h5>
-          <span>20</span>
-          <h5>Total waste in</h5>
-          <span>564 kg</span>
-          <h5>Total waste out</h5>
-          <span>1205 kg</span>
-        </div>
-      </div>
-    </main>
-
-    <aside>
-      <div className="card--container">
-        <div className="card--container-up">
-          <p className="number-card">ID 122 887 552</p>
-        </div>
-        <div className="card--container-down">
-          <p>Your balance</p>
-          <span className="balance">$ 2,920</span>
-        </div>
-      </div>
-
-      <div className="transaction--container">
-        <h3>Last Transaction</h3>
-
-        <div className="transaction">
-          <div className="logo-grow">
-            <span
-              className="iconify"
-              data-inline="false"
-              data-icon="akar-icons:arrow-up-left"
-            ></span>
-          </div>
-          <div className="transaction--infos">
-            <h6>Deposit Waste</h6>
-            <p>Hotel Garden</p>
-          </div>
-        </div>
-        <div className="transaction translate">
-          <div className="logo-grow">
-            <span
-              className="iconify"
-              data-inline="false"
-              data-icon="akar-icons:arrow-up-left"
-            ></span>
-          </div>
-          <div className="transaction--infos">
-            <h6>Deposit Waste</h6>
-            <p>Plastic Factory</p>
-          </div>
-        </div>
-        <div className="transaction">
-          <div className="logo-grow">
-            <span
-              className="iconify"
-              data-inline="false"
-              data-icon="akar-icons:arrow-up-left"
-            ></span>
-          </div>
-          <div className="transaction--infos">
-            <h6>Deposit Waste</h6>
-            <p>Hotel Garden</p>
-          </div>
-        </div>
-      </div>
-    </aside>
-  </div>
-  </>
-  )
-}
-
-export default Dashboard
+export default Dashboard;

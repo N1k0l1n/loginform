@@ -35,7 +35,7 @@ main{
     font-size: 25px;
     margin-left: 50px;
 }
-.link{
+.linkss{
     display: flex;
     color: #156cb3;
     text-decoration: none;
@@ -43,7 +43,7 @@ main{
     gap: 15px;
     transition: all 0.5s;
 }
-.link:hover{
+.linkss:hover{
     background:lightskyblue;
     color: #000;
     transition: all 0.5s;

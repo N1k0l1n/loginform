@@ -10,7 +10,7 @@ section {
     align-items: center;
     min-height: 100vh;
     width: 100%;
-    background: url('../assets/Login.jpeg')no-repeat ;
+    background: url('../assets/test.jpg')no-repeat ;
     background-position: center;
     background-size: cover;
 }
@@ -94,7 +94,7 @@ input:valid ~ label{
     text-decoration: underline;
 }
 
-button{
+.lg-button{
     width: 100%;
     height: 40px;
     border-radius: 40px;
@@ -105,6 +105,22 @@ button{
     font-size: 1em;
     font-weight: 600;
 }
+
+.lg-button:disabled {
+  pointer-events: none;
+}
+
+.lg-button:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.lg-button:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+    
+
 
 .register{
     font-size: .9em;
