@@ -1,5 +1,4 @@
 import "./App.css";
-
 import {
   BrowserRouter as Router,
   Routes,
@@ -20,17 +19,19 @@ import ViewUser from "./user/ViewUser/ViewUser.jsx";
 import LineChat from "./components/LineChat";
 import PieChart from "./components/PieChart";
 import PrivateRoutes from "./PrivateRoutes";
+import NotFound from "./pages/NotFound";
 
 
 function Routers() {
   return (
     <Routes>
-      <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        
+      <Route exact path="/login" element={<Login />} />
+        <Route exact path="/register" element={<Register />} />
 
-        <Route  element={<Nav />} >
-         <Route path="/dashboard" element={
-        <PrivateRoutes>
+     
+        <Route path="/" element={<PrivateRoutes/>}>
+         <Route path="/" element={<Nav />} >
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/dashboard" element={<LineChat />} />
               <Route path="/dashboard" element={<PieChart />} />
@@ -41,10 +42,11 @@ function Routers() {
               <Route path="/users/edit/:userId" element={<EditUser />} />
               <Route path="/user/create" element={<AddUser />} />
               <Route path="/user/view/:userId" element={<ViewUser />} />
-             </PrivateRoutes>
-              }
-              /> 
-      </Route>
+              </Route>
+              </Route>
+            
+             
+    <Route path='*' element={<NotFound />} />
     </Routes>
   );
 }

@@ -43,7 +43,7 @@ export default function Login() {
     }
   };
 
-  let { loading, user, errorMessage } = state;
+  let { user } = state;
 
   return (
     <section>
@@ -80,7 +80,7 @@ export default function Login() {
                  />
                 Remeber Me
                 <br />
-                <a>Forgot Password?</a>
+                <p>Forgot Password?</p>
               </label>
             </div>
             <button
