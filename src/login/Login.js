@@ -33,7 +33,8 @@ export default function Login() {
     try {
       let response = await UserService.login(state.user);
       if (response) {
-          localStorage.setItem('user','test')
+          localStorage.setItem('user','test');
+          localStorage.setItem('token', response.data.token);
         navigate("/dashboard", { replace: true });
       }
     } catch (error) {
@@ -86,7 +87,7 @@ export default function Login() {
             <button
               type="submit"
               className="lg-button"
-              style={{ background: "#007500" }}
+              style={{ background: "#00BFFF" }}
             >
               Log in
             </button>

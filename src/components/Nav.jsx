@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import "./Nav.css";
 import {
   FaBook,
@@ -8,12 +8,23 @@ import {
   FaBars,
   FaUser,
   FaWrench,
+  FaPowerOff,
 } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
 const Nav = ({ children }) => {
+
+  let navigate = useNavigate();
+
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
+
+
+  const logout = () =>{
+    window.localStorage.clear();
+    navigate("/login");
+  }
+
   const menuItem = [
     {
       path: "/dashboard",
@@ -72,6 +83,7 @@ const Nav = ({ children }) => {
             </div>
           </NavLink>
         ))}
+        <button onClick={logout} className="lg-out-btn" ><i className="fas fa-power-off"></i></button>
       </div>
       <main>{children}</main>
       

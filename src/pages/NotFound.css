@@ -55,7 +55,7 @@ animation: ani9 0.7s ease-in-out infinite  alternate ;}
   background: #C0D7DD;
   border-radius: 0 50% 0 50%;
   transform: rotate(45deg);
-  background: #33265C;
+  background: #3400df;
 }
 .hair-r{
   left: 20px;
@@ -64,7 +64,7 @@ animation: ani9 0.7s ease-in-out infinite  alternate ;}
   background: #C0D7DD;
   border-radius: 0 50% 0 50%;
   transform: rotate(45deg);
-  background: #33265C;
+  background: #3400df;
 
 }
 .head {
@@ -159,7 +159,7 @@ button.go-back {
     z-index: 9;
     border-radius: 10px;
     background: #C0D7DD;
-    color: #33265C;
+    color: #230390;
     box-shadow: 0 0 10px 0 #C0D7DD;
 	margin-top: 20px;
 }
